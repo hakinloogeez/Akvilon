@@ -23,9 +23,6 @@ Stake Minimum Age: 16 Hours
 
 Masternode Requires : 4000AKL
 
-RPCPORT = 22223
-
-PORT = 22222
 
 POW Reward Scheme
 
