@@ -1,11 +1,10 @@
-![Coin-Logo](https://i.imgur.com/4NXDrx6.png)
-# Akvilon Masternode Setup Guide (Ubuntu 16.04)
-This guide will assist you in setting up a Akvilon Masternode on a Linux Server running Ubuntu 16.04. (Use at your own risk)
+# zftv2 Masternode Setup Guide (Ubuntu 16.04)
+This guide will assist you in setting up a zftv2 Masternode on a Linux Server running Ubuntu 16.04. (Use at your own risk)
 
-If you require further assistance contact the support team @ [Discord](https://discord.gg/haGcx3c)
+If you require further assistance contact the support team @ [Discord](https://discord.gg/F6FVAd5)
 ***
 ## Requirements
-1) **4,000 Akvilon coins.**
+1) **1,000,000 zftv2 coins.**
 2) **A Vultr VPS running Linux Ubuntu 16.04.**
 3) **A Windows local wallet.**
 4) **An SSH client such as [Bitvise](https://dl.bitvise.com/BvSshClient-Inst.exe)**
@@ -133,11 +132,11 @@ If you require further assistance contact the support team @ [Discord](https://d
 ## Section D: Preparing the Local wallet
 
 ***Step 1***
-* Download and install the Akvilon wallet [here](https://github.com/Akviloncoin/Akvilon/releases)
+* Download and install the zftv2 wallet [here](https://github.com/)
 ***
 
 ***Step 2***
-* Send EXACLY 4,000 AKL to a receive address within your wallet.
+* Send EXACLY 1,000,000 ZFT2 to a receive address within your wallet.
 ***
 
 ***Step 3***
@@ -198,18 +197,10 @@ Click "Ok"
 ***step 4***
 * Check the status of your masternode within the VPS by using the command below:
 
-`akviloncoind masternode status`
+`zftv2coind masternode status`
 
 *You should see ***status 9***
 
 If you do, congratulations! You have now setup a masternode. If you do not, please contact support and they will assist you.  
 ***
-
-## Donations:  
-
-Any donation is highly appreciated.  
-
-**BCH**: qzgnck23pwfag8ucz2f0vf0j5skshtuql5hmwwjhds  
-**ETH**: 0x765eA1753A1eB7b12500499405e811f4d5164554  
-**LTC**: LNt9EQputZK8djTSZyR3jE72o7NXNrb4aB  
 
