@@ -10,8 +10,8 @@ COIN_REPO='https://github.com/zftv2coin/zftv2.git'
 COIN_TGZ='https://github.com/'
 COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
 COIN_NAME='zftv2Coin'
-COIN_PORT=10333
-RPC_PORT=10332
+COIN_PORT=10338
+RPC_PORT=10339
 
 NODEIP=$(curl -s4 icanhazip.com)
 
@@ -29,7 +29,7 @@ purgeOldInstallation() {
     #kill wallet daemon
     sudo killall zftv2Coind > /dev/null 2>&1
     #remove old ufw port allow
-    sudo ufw delete allow 10333/tcp > /dev/null 2>&1
+    sudo ufw delete allow 10337/tcp > /dev/null 2>&1
     #remove old files
     if [ -d "~/.zftv2Coin" ]; then
         sudo rm -rf ~/.zftv2Coin > /dev/null 2>&1
@@ -269,7 +269,7 @@ function important_information() {
  echo -e "${BLUE}================================================================================================================================"
  echo -e "${CYAN}Follow twitter to stay updated.  https://twitter.com/${NC}"
  echo -e "${BLUE}================================================================================================================================${NC}"
- echo -e "${GREEN}${NC}"
+ echo -e "${GREEN}For vps hosting goto https://www.vultr.com/?ref=7436046${NC}"
  echo -e "${BLUE}================================================================================================================================${NC}"
  echo -e "${BLUE}================================================================================================================================${NC}"
 }
