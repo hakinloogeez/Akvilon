@@ -55,7 +55,7 @@ bool AppInit(int argc, char* argv[])
             std::string strUsage = _("AkvilonCoin version") + " " + FormatFullVersion() + "\n\n" +
                 _("Usage:") + "\n" +
                   "  akviloncoind [options]                     " + "\n" +
-                  "  akviloncoind [options] <command> [params]  " + _("Send command to -server or akviloncoind") + "\n" +
+                  "  akviloncoind [options] <command> [params]  " + _("Send command to -server or zftv2coind") + "\n" +
                   "  akviloncoind [options] help                " + _("List commands") + "\n" +
                   "  akviloncoind [options] help <command>      " + _("Get help for a command") + "\n";
 
@@ -67,7 +67,7 @@ bool AppInit(int argc, char* argv[])
 
         // Command-line RPC
         for (int i = 1; i < argc; i++)
-            if (!IsSwitchChar(argv[i][0]) && !boost::algorithm::istarts_with(argv[i], "akviloncoin:"))
+            if (!IsSwitchChar(argv[i][0]) && !boost::algorithm::istarts_with(argv[i], "zftv2coin:"))
                 fCommandLine = true;
 
         if (fCommandLine)
