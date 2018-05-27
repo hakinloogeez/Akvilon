@@ -1,6 +1,6 @@
 TEMPLATE = app
-TARGET = akviloncoin-qt
-VERSION = 1.0.0.2
+TARGET = zftv2-qt
+VERSION = 2.0.0.0a
 INCLUDEPATH += src src/json src/qt src/qt/plugins/mrichtexteditor
 QT += network printsupport
 DEFINES += ENABLE_WALLET
