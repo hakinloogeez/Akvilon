@@ -25,9 +25,9 @@ Stake Minimum Age: 16 Hours
 
 Masternode Requires : 1,000,000
 
-RPCPORT = 49089
+RPCPORT = 10337
 
-PORT = 49088
+PORT = 10336
 
 Fork at Block 1,700,001
 
