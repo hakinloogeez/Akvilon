@@ -56,30 +56,30 @@ static void convertSeeds(std::vector<CAddress> &vSeedsOut, const unsigned int *d
 class CMainParams : public CChainParams {
 public:
     CMainParams() {
-        pchMessageStart[0] = 0xa4;
-        pchMessageStart[1] = 0xc5;
-        pchMessageStart[2] = 0xb2;
-        pchMessageStart[3] = 0xde;
-        vAlertPubKey = ParseHex("78340397288b1e4264789957oyd4ldc63ae4a1a2523b24300a3de1c5c8f4ec1e13eece09ebb0e9514f7b2b7e65f35f3a6ef6279d512f755078347bdcdf4ac378704");
-        nDefaultPort = 49085;
-        nRPCPort = 49086;
+        pchMessageStart[0] = 0x9e;
+        pchMessageStart[1] = 0xee;
+        pchMessageStart[2] = 0x83;
+        pchMessageStart[3] = 0x2b;
+        vAlertPubKey = ParseHex("024725c9c766a51b223004cbbb41fb3c6c12238de07bae83cd44402ed391bc9f7c");
+        nDefaultPort = 10338;
+        nRPCPort = 10339;
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 16);
 
-        const char* pszTimestamp = "Volume of the Scottish economy returned to the pre-crisis level earlier than experts expected, and faster than the British economy as a whole July 17, 2014";
+        const char* pszTimestamp = "The Times 27/Feb/2015 Spock actor Leonard Nimoy dies aged 83. \\\\//_";
         std::vector<CTxIn> vin;
         vin.resize(1);
         vin[0].scriptSig = CScript() << 0 << CBigNum(42) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
         std::vector<CTxOut> vout;
         vout.resize(1);
         vout[0].SetEmpty();
-        CTransaction txNew(1, 1526313900, vin, vout, 0);
+        CTransaction txNew(1, 5000000, vin, vout, 0);
         genesis.vtx.push_back(txNew);
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime    = 1526313900;
+        genesis.nTime    = 1425097800;
         genesis.nBits    = bnProofOfWorkLimit.GetCompact();
-        genesis.nNonce   = 2125083;
+        genesis.nNonce   = 12963623;
 
         hashGenesisBlock = genesis.GetHash();
 #ifdef SHOW_LOG
@@ -88,24 +88,24 @@ public:
         LogPrintf("genesis.nBits == %d\n", genesis.nBits);
         LogPrintf("genesis.nNonce == %d\n", genesis.nNonce);
 #endif
-        assert(hashGenesisBlock == uint256("669edc268b641e9dce1848afbdaed8b8ea006b4fa8e454e9f594dff52ab1686e"));
-        assert(genesis.hashMerkleRoot == uint256("02fd74dbcb2ed7efe5ecc9e52f353d432d6be4a1558af48090a8c047adc0d3d8"));
+        assert(hashGenesisBlock == uint256("0x0000002844ad8197e16ea8d53173da248e0ac23dd0436c90a15c22bc09d976b2"));
+        assert(genesis.hashMerkleRoot == uint256("0x942ff871843e5a6bfe0c5ba40ef15e0d1fca258493acac1ef512ab368ec71371"));
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,23);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,18);
-        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,25);
+        base58Prefixes[PUBKEY_ADDRESS] = list_of(80);  // P2PKH addresses start with 'Z'
+        base58Prefixes[SCRIPT_ADDRESS] = list_of(5);   // P2SH  addresses start with '3'
+        base58Prefixes[SECRET_KEY] =     list_of(208); // Priv keys prefixed with 80 + 128
         base58Prefixes[STEALTH_ADDRESS] = std::vector<unsigned char>(1,78);
         base58Prefixes[EXT_PUBLIC_KEY] = list_of(0x04)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
         base58Prefixes[EXT_SECRET_KEY] = list_of(0x04)(0x88)(0xAD)(0xE4).convert_to_container<std::vector<unsigned char> >();
 
-        vSeeds.push_back(CDNSSeedData("185.246.152.210","185.246.152.210"));
+        vSeeds.push_back(CDNSSeedData("ziftrcoin.com","seed.ziftrcoin.com"));
         convertSeeds(vFixedSeeds, pnSeed, ARRAYLEN(pnSeed), nDefaultPort);
 
         nPoolMaxTransactions = 3;
 
         strDarksendPoolDummyAddress = "";
-        nLastPOWBlock = 130316;
-        nPOSStartBlock = 7467;
+        nLastPOWBlock = 3000000;
+        nPOSStartBlock = 171000;
     }
 
     virtual const CBlock& GenesisBlock() const { return genesis; }
@@ -131,21 +131,21 @@ public:
         // The message start string is designed to be unlikely to occur in normal data.
         // The characters are rarely used upper ASCII, not valid as UTF-8, and produce
         // a large 4-byte int at any alignment.
-        pchMessageStart[0] = 0xd3;
-        pchMessageStart[1] = 0xc4;
-        pchMessageStart[2] = 0xb1;
-        pchMessageStart[3] = 0xdf;
+        pchMessageStart[0] = 0x8b;
+        pchMessageStart[1] = 0x11;
+        pchMessageStart[2] = 0x09;
+        pchMessageStart[3] = 0x06;
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 16);
         vAlertPubKey = ParseHex("044c0f17b03507d43fa568e5aa7845e5d4398708bdccc0f658d67029224ad170babc8492d73bbc95ffca8f73eab12d9bb2d87ea6671b0ec023e2fdf1a141ac4624");
-        nDefaultPort = 47445;
-        nRPCPort = 47446;
+        nDefaultPort = 11338;
+        nRPCPort = 11339;
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 8);
         strDataDir = "testnet";
 
         // Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.nBits  = bnProofOfWorkLimit.GetCompact();
-        genesis.nTime    = 1516063067;
-        genesis.nNonce = 44;
+        genesis.nTime    = 1425097801;
+        genesis.nNonce = 27099750;
 #ifdef SHOW_LOG
         LogPrintf("CTestNetParams.hashGenesisBlock == %s\n", hashGenesisBlock.ToString().c_str());
         LogPrintf("CTestNetParams.hashMerkleRoot == %s\n", genesis.hashMerkleRoot.ToString().c_str());
@@ -155,9 +155,9 @@ public:
         vFixedSeeds.clear();
         vSeeds.clear();
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,115);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,21);
-        base58Prefixes[SECRET_KEY]     = std::vector<unsigned char>(1,28);
+        base58Prefixes[PUBKEY_ADDRESS] = list_of(111);
+        base58Prefixes[SCRIPT_ADDRESS] = list_of(196);
+        base58Prefixes[SECRET_KEY]     = list_of(239);
         base58Prefixes[STEALTH_ADDRESS] = std::vector<unsigned char>(1,80);
         base58Prefixes[EXT_PUBLIC_KEY] = list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
         base58Prefixes[EXT_SECRET_KEY] = list_of(0x04)(0x35)(0x83)(0x94).convert_to_container<std::vector<unsigned char> >();
