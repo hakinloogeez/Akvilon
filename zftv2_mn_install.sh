@@ -1,17 +1,17 @@
 #!/bin/bash
 
 TMP_FOLDER=$(mktemp -d)
-CONFIG_FILE='AkvilonCoin.conf'
-CONFIGFOLDER='/root/.AkvilonCoin'
-COIN_DAEMON='akviloncoind'
-COIN_CLI='akviloncoind'
+CONFIG_FILE='zftv2Coin.conf'
+CONFIGFOLDER='/root/.zftv2Coin'
+COIN_DAEMON='zftv2coind'
+COIN_CLI='zftv2coind'
 COIN_PATH='/usr/local/bin/'
-COIN_REPO='https://github.com/Akviloncoin/Akvilon.git'
-COIN_TGZ='https://github.com/Realbityoda/Akvilon-Coin/releases/download/v1.0.0.0/akviloncoind.tar.gz'
+COIN_REPO='https://github.com/zftv2coin/zftv2.git'
+COIN_TGZ='https://github.com/'
 COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
-COIN_NAME='AkvilonCoin'
-COIN_PORT=49085
-RPC_PORT=49086
+COIN_NAME='zftv2Coin'
+COIN_PORT=10333
+RPC_PORT=10332
 
 NODEIP=$(curl -s4 icanhazip.com)
 
@@ -27,15 +27,15 @@ MAG='\e[1;35m'
 purgeOldInstallation() {
     echo -e "${GREEN}Searching and removing old $COIN_NAME files and configurations${NC}"
     #kill wallet daemon
-    sudo killall AkvilonCoind > /dev/null 2>&1
+    sudo killall zftv2Coind > /dev/null 2>&1
     #remove old ufw port allow
-    sudo ufw delete allow 49085/tcp > /dev/null 2>&1
+    sudo ufw delete allow 10333/tcp > /dev/null 2>&1
     #remove old files
-    if [ -d "~/.AkvilonCoin" ]; then
-        sudo rm -rf ~/.AkvilonCoin > /dev/null 2>&1
+    if [ -d "~/.zftv2Coin" ]; then
+        sudo rm -rf ~/.zftv2Coin > /dev/null 2>&1
     fi
-    #remove binaries and Akvilon Coind utilities
-    cd /usr/local/bin && sudo rm AkvilonCoind > /dev/null 2>&1 && cd
+    #remove binaries and zftv2 Coind utilities
+    cd /usr/local/bin && sudo rm zftv2Coind > /dev/null 2>&1 && cd
     echo -e "${GREEN}* Done${NONE}";
 }
 
@@ -252,7 +252,7 @@ clear
 function important_information() {
  echo
  echo -e "${BLUE}================================================================================================================================${NC}"
- echo -e "${PURPLE}Windows Wallet Guide. https://github.com/Realbityoda/Akvilon-Coin/blob/master/README.md${NC}"
+ echo -e "${PURPLE}Windows Wallet Guide. https://github.com/${NC}"
  echo -e "${BLUE}================================================================================================================================${NC}"
  echo -e "$COIN_NAME Masternode is up and running listening on port ${GREEN}$COIN_PORT${NC}."
  echo -e "Configuration file is: ${RED}$CONFIGFOLDER/$CONFIG_FILE${NC}"
@@ -267,13 +267,10 @@ function important_information() {
  echo -e "Sentinel logs is: ${RED}$CONFIGFOLDER/sentinel.log${NC}"
  fi
  echo -e "${BLUE}================================================================================================================================"
- echo -e "${CYAN}Follow twitter to stay updated.  https://twitter.com/Real_Bit_Yoda${NC}"
+ echo -e "${CYAN}Follow twitter to stay updated.  https://twitter.com/${NC}"
  echo -e "${BLUE}================================================================================================================================${NC}"
- echo -e "${GREEN}Donations accepted but never required.${NC}"
+ echo -e "${GREEN}${NC}"
  echo -e "${BLUE}================================================================================================================================${NC}"
- echo -e "${YELLOW}BCH: qzgnck23pwfag8ucz2f0vf0j5skshtuql5hmwwjhds"
- echo -e "${YELLOW}ETH: 0x765eA1753A1eB7b12500499405e811f4d5164554"
- echo -e "${YELLOW}LTC: LNt9EQputZK8djTSZyR3jE72o7NXNrb4aB${NC}"
  echo -e "${BLUE}================================================================================================================================${NC}"
 }
 
