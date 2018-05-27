@@ -1,15 +1,17 @@
-# Akvilon
-Name : Akvilon
+This is not Akvilon, this wallet will be used to test a fork of ZiftrCoin. This will not be ZiftrCoin either, this will be a completely new coin using a snapshot of the ZiftrCoin blockchain and the addresses. Also, this is not a release, this is a test at the moment.
 
-Symbol : AKL
+# Ziftr Fork Test
+Name : ZiftrV2
+
+Symbol : ZFT2
 
 Algorithm : Skein（POW/POS/MN）
 
-Total amount : 45,000,000
+Total amount : Infinite
 
-Premine : 0.75%
+Premine : 10,000,000 (Not Including Original Coins Pre-Fork) 
 
-Last POW Block : 130,316blocks
+Last POW Block : Block 3,000,000
 
 Block time : 60S
 
@@ -17,96 +19,85 @@ Block size : 40MB
 
 Coin base maturity :  50 blocks
 
-Diffculty Target : 5 blocks
+Diffculty Re-Target : 5 blocks
 
 Stake Minimum Age: 16 Hours
 
-Masternode Requires : 4000AKL
+Masternode Requires : 1,000,000
 
-RPCPORT = 49086
+RPCPORT = 49089
 
-PORT = 49085
+PORT = 49088
 
+Fork at Block 1,700,001
 
 POW Reward Scheme
 
-51 - 170 Block = 1 AKL per Block
+1,700,001 - 1,701,000 Block = 10,000 ZFT2 per Block (Premine)
 
-171 - 4500 Block = 7 AKL per Block
+1,701,001 - 1,745,000 Block = 100 ZFT2 per Block
   
-4501 - 4541 Block = 25 AKL per Platinum block
+1,745,001 - 1,745,041 Block = 250 ZFT2 per Platinum block
 
-4542 - 7425 Block = 7 AKL per Block
+1,745,042 - 1,745,250 Block = 200 ZFT2 per Block
   
-7426 - 7466 Block = 25 AKL per Platinum block
+1,745,251 - 1,745,660 Block = 250 ZFT2 per Platinum block
 
-7467 - 10350 Block = 6 AKL per Block
+1,745,661 - 1,750,000 Block = 80 ZFT2 per Block
 
-10351 - 10391 Block = 25 AKL per Platinum block
+1,750,001 - 1,751,000 Block = 100 ZFT2 per Platinum block
 
-10392 - 13275 Block = 6 AKL per Block 
+1,751,001 - 1,900,000 Block = 20 ZFT2 per Block 
  
-13276 - 13316 Block = 25 AKL per Platinum block
+1,900,001 - 1,901,000 Block = 50 ZFT2 per Platinum block
 
-13317 - 16200 Block = 5 AKL per Block
+1,901,001 - 2,000,000 Block = 15 ZFT2 per Block
 
-16201 - 16241 Block = 25 AKL per Platinum block
+2,000,001 - 2,001,000 Block = 50 ZFT2 per Platinum block
 
-16242 - 19125 Block = 5 AKL per Block
+2,001,001 - 2,100,000 Block = 15 ZFT2 per Block
 
-19126 - 19166 Block = 25 AKL per Platinum block
+2,100,001 - 2,101,000 Block = 25 ZFT2 per Platinum block
 
-19167 - 22050 Block = 4 AKL per Block 
+2,101,001 - 2,200,000 Block = 10 ZFT2 per Block 
  
-22051 - 22091 Block = 25 AKL per Platinum block
+2,200,001 - 2,201,000 Block = 25 ZFT2 per Platinum block
 
-22092 - 24975 Block = 4 AKL per Block
+2,201,001 - 3,000,000 Block = 10 ZFT2 per Block
 
-24976 - 25016 Block = 25 AKL per Platinum block
-
-25017 - 27900 Block = 3 AKL per Block
-
-27901 - 27941 Block = 25 AKL per Platinum block
-
-27942 - 130316 Block = 3 AKL per Block
-
-130316 POW OVER
+3,000,000 POW OVER
 
 POS Reward Scheme
 
-7467 - 8500 Block = 10 AKL per Block
+1,700,001 - 1,900,000 Block = 1 ZFT2 per Block
 
-8501 - 9534 Block = 11 AKL per Block 
+1,900,001 - 2,100,000 Block = 40 ZFT2 per Block 
  
-9535 - 14534 Block = 12 AKL per Block  
+2,100,001 - 2,400,000 Block = 24 ZFT2per Block  
 
-14534 - 19534 Block = 13 AKL per Block
+2,400,001 - 2,600,000 Block = 22 ZFT2 per Block
   
-19535 - 24534 Block = 14 AKL per Block
+2,600,001 - 2,800,000 Block = 20 ZFT2 per Block
 
-24535 - 29534 Block = 15 AKL per Block
+2,800,001 - 3,000,000 Block = 18 ZFT2 per Block
   
-29535 - 34534 Block = 16 AKL per Block
+3,000,001 - 3,200,000 Block = 16 ZFT2 per Block
   
-34535 - 39534 Block = 17 AKL per Block  
+3,200,001 - 3,400,000 Block = 14 ZFT2 per Block  
 
-39535 - 44534 Block = 18 AKL per Block
+3,400,001 - 3,600,000 Block = 12 ZFT2 per Block
 
-44535 - 49534 Block = 19 AKL per Block
+3,600,001 - 3,800,000 Block = 10 ZFT2 per Block
   
-49535 - 54534 Block = 20 AKL per Block
+3,800,001 - 4,600,000 Block = 8 ZFT2 per Block
   
-54535 - 59534 Block = 20 AKL per Block
+4,600,001 - 4,800,000 Block = 6 ZFT2 per Block
   
-59535 - 64534 Block = 20 AKL per Block
+4,800,001 - 5,000,000 Block = 4 ZFT2 per Block
 
-64535 - 69534 Block = 19 AKL per Block 
- 
-69535 - 74534 Block = 15 AKL per Block  
-
-After 74534 Block = 10 AKL per Block
+5,000,001 - Forward Block = 2 ZFT2 per Block 
 
 
 Masternodes Rewards: 75% of POS Blocks
 
-Masternodes Activation: Since block 7467
+Masternodes Activation: Since block 1,700,001
