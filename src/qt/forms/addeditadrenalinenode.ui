@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Add/Edit AkvilonCoin Node</string>
+   <string>Add/Edit ZFTV2Coin Node</string>
   </property>
   <property name="modal">
    <bool>true</bool>
