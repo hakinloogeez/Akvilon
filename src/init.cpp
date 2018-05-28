@@ -111,7 +111,7 @@ void Shutdown()
     TRY_LOCK(cs_Shutdown, lockShutdown);
     if (!lockShutdown) return;
 
-    RenameThread("AkvilonCoin-shutoff");
+    RenameThread("zftv2Coin-shutoff");
     mempool.AddTransactionsUpdated(1);
     StopRPCThreads();
     SecureMsgShutdown();
@@ -292,7 +292,7 @@ strUsage += "\n" + _("Masternode options:") + "\n";
     strUsage += "\n" + _("Darksend options:") + "\n";
     strUsage += "  -enabledarksend=<n>          " + _("Enable use of automated darksend for funds stored in this wallet (0-1, default: 0)") + "\n";
     strUsage += "  -darksendrounds=<n>          " + _("Use N separate masternodes to anonymize funds  (2-8, default: 2)") + "\n";
-    strUsage += "  -anonymizeAkvilonCoinamount=<n> " + _("Keep N AkvilonCoin anonymized (default: 0)") + "\n";
+    strUsage += "  -anonymizezftv2Coinamount=<n> " + _("Keep N zftv2Coin anonymized (default: 0)") + "\n";
     strUsage += "  -liquidityprovider=<n>       " + _("Provide liquidity to Darksend by infrequently mixing coins on a continual basis (0-100, default: 0, 1=very frequent, high fees, 100=very infrequent, low fees)") + "\n";
 
     strUsage += "\n" + _("InstantX options:") + "\n";
@@ -1047,9 +1047,9 @@ bool AppInit2(boost::thread_group& threadGroup)
         nDarksendRounds = 99999;
     }
 
-    nAnonymizeAkvilonCoinAmount = GetArg("-anonymizeakviloncoinamount", 0);
-    if(nAnonymizeAkvilonCoinAmount > 999999) nAnonymizeAkvilonCoinAmount = 999999;
-    if(nAnonymizeAkvilonCoinAmount < 2) nAnonymizeAkvilonCoinAmount = 2;
+    nAnonymizezftv2CoinAmount = GetArg("-anonymizezftv2coinamount", 0);
+    if(nAnonymizezftv2CoinAmount > 999999) nAnonymizezftv2CoinAmount = 999999;
+    if(nAnonymizezftv2CoinAmount < 2) nAnonymizezftv2CoinAmount = 2;
 
     fEnableInstantX = GetBoolArg("-enableinstantx", fEnableInstantX);
     nInstantXDepth = GetArg("-instantxdepth", nInstantXDepth);
@@ -1064,7 +1064,7 @@ bool AppInit2(boost::thread_group& threadGroup)
     LogPrintf("fLiteMode %d\n", fLiteMode);
     LogPrintf("nInstantXDepth %d\n", nInstantXDepth);
     LogPrintf("Darksend rounds %d\n", nDarksendRounds);
-    LogPrintf("Anonymize AkvilonCoin Amount %d\n", nAnonymizeAkvilonCoinAmount);
+    LogPrintf("Anonymize AkvilonCoin Amount %d\n", nAnonymizezftv2CoinAmount);
 
     /* Denominations
        A note about convertability. Within Darksend pools, each denomination
