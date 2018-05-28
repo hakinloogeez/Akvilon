@@ -9,7 +9,7 @@ Algorithm : Skein（POW/POS/MN）
 
 Total amount : Infinite
 
-Premine : TBD at time of release (Not Including Original Coins Pre-Fork) 
+Premine : TBD at time of release (Not Including Original Coins Pre-Fork)
 
 Last POW Block : Block 3,000,000
 
@@ -31,7 +31,7 @@ PORT = 10338
 
 Fork at Block 1,650,001
 
-Premine Over at Block 1,700,000 (Total Premine TBD at release ZFT2)
+Premine Over at Block 1,654,000 (Total Premine TBD at release ZFT2)
 
 Premine to be used as follows:
 
